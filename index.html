@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trinetra AI - CyberSec Intelligence</title>
+  <meta name="description" content="Trinetra AI translates complex cyber threats into clear, practical knowledge. Ask about any cyberattack and get an instant AI-powered explanation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <!-- Matrix rain canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <div class="container">
+
+    <!-- ── Hero / Branding ── -->
+    <header class="hero">
+      <div class="logo-wrap">
+        <span class="logo-eye">👁</span>
+        <h1 class="logo-text">TRINETRA AI</h1>
+        <span class="logo-eye">👁</span>
+      </div>
+      <p class="tagline">
+        In a world of hidden networks, deception, and digital warfare,<br />
+        <strong>awareness is the first line of defense.</strong>
+      </p>
+      <p class="intro">
+        Trinetra AI translates complex cyber threats into clear, practical knowledge,
+        helping ordinary users navigate the modern digital battlefield with
+        <em>clarity</em>, <em>vigilance</em>, and <em>control</em>.
+      </p>
+      <div class="divider-line"></div>
+    </header>
+
+    <!-- ── Quick Picks ── -->
+    <p class="section-label">&gt; Quick picks</p>
+    <div class="presets">
+      <button class="preset-btn" id="btn-phishing" onclick="pickAttack('Phishing', this)">
+        <span class="preset-icon">🎣</span>
+        <span class="preset-name">Phishing</span>
+      </button>
+      <button class="preset-btn" id="btn-sqli" onclick="pickAttack('SQL Injection', this)">
+        <span class="preset-icon">🗄️</span>
+        <span class="preset-name">SQL Injection</span>
+      </button>
+      <button class="preset-btn" id="btn-ransomware" onclick="pickAttack('Ransomware', this)">
+        <span class="preset-icon">🔒</span>
+        <span class="preset-name">Ransomware</span>
+      </button>
+      <button class="preset-btn" id="btn-mitm" onclick="pickAttack('Man-in-the-Middle', this)">
+        <span class="preset-icon">↔️</span>
+        <span class="preset-name">MITM Attack</span>
+      </button>
+      <button class="preset-btn" id="btn-ddos" onclick="pickAttack('DDoS', this)">
+        <span class="preset-icon">⛈️</span>
+        <span class="preset-name">DDoS</span>
+      </button>
+      <button class="preset-btn" id="btn-social" onclick="pickAttack('Social Engineering', this)">
+        <span class="preset-icon">🎭</span>
+        <span class="preset-name">Social Eng.</span>
+      </button>
+      <button class="preset-btn" id="btn-zeroday" onclick="pickAttack('Zero-Day Exploit', this)">
+        <span class="preset-icon">💣</span>
+        <span class="preset-name">Zero-Day</span>
+      </button>
+      <button class="preset-btn" id="btn-keylogger" onclick="pickAttack('Keylogger', this)">
+        <span class="preset-icon">⌨️</span>
+        <span class="preset-name">Keylogger</span>
+      </button>
+      <button class="preset-btn" id="btn-bruteforce" onclick="pickAttack('Brute Force Attack', this)">
+        <span class="preset-icon">🔨</span>
+        <span class="preset-name">Brute Force</span>
+      </button>
+      <button class="preset-btn" id="btn-deepfake" onclick="pickAttack('Deepfake Attack', this)">
+        <span class="preset-icon">🎭</span>
+        <span class="preset-name">Deepfake</span>
+      </button>
+      <button class="preset-btn" id="btn-cryptojacking" onclick="pickAttack('Cryptojacking', this)">
+        <span class="preset-icon">💰</span>
+        <span class="preset-name">Cryptojacking</span>
+      </button>
+      <button class="preset-btn" id="btn-spyware" onclick="pickAttack('Spyware', this)">
+        <span class="preset-icon">👁️</span>
+        <span class="preset-name">Spyware</span>
+      </button>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- ── Custom Query ── -->
+    <p class="section-label">&gt; Or type your own threat</p>
+    <div class="input-row">
+      <input type="text" id="attackInput" placeholder="e.g. brute force, zero-day exploit, keylogger..." autocomplete="off" />
+      <button id="explainBtn" onclick="explain()">ANALYZE &gt;</button>
+    </div>
+
+    <!-- ── Output ── -->
+    <div class="output-wrap">
+      <p id="output-title"></p>
+      <div id="output"><span class="placeholder">// Awaiting threat input...</span></div>
+    </div>
+
+    <footer class="site-footer">
+      <span>TRINETRA AI &bull; CyberSec Intelligence Terminal &bull; v1.0</span>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
