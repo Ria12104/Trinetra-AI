@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     try {
 
         // Secret Gemini API key from Vercel environment variables
-        const apiKey = process.env.GEMINI_API_KEY;
+        const apiKey = process.env.API_KEY;
 
         // Get attack name from frontend
         const { attack } = req.body;

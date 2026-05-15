@@ -191,4 +191,4 @@ document.addEventListener("DOMContentLoaded", function matrixRain() {
 
     setInterval(draw, 40);
 
-})();
+});
